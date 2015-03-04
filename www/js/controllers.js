@@ -16,6 +16,7 @@ app.controller('AppCtrl', function($scope, $cordovaPush, $cordovaDialogs, $cordo
     // Register
     $scope.register = function () {
         var config = null;
+        alert("here");
 
         if (ionic.Platform.isAndroid()) {
             config = {
@@ -31,6 +32,7 @@ app.controller('AppCtrl', function($scope, $cordovaPush, $cordovaDialogs, $cordo
         }
 
         $cordovaPush.register(config).then(function (result) {
+            alert("here 2");
             console.log("Register success " + result);
 
             $cordovaToast.showShortCenter('Registered for push notifications');
